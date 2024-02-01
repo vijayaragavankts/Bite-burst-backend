@@ -31,8 +31,6 @@ mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB connected successfully");
-    // Pre-connecting the connection pool by executing a dummy query
-    return mongoose.connection.db.listCollections().toArray();
   })
   .catch((err) => {
     console.error("Error connecting to MongoDB:", err);
